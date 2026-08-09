@@ -1,0 +1,4 @@
+interface:
+  display_name: "Axhub 需求发布到 TAPD"
+  short_description: "将 Axhub 原型与 PRD 发布为可追溯的 TAPD 需求"
+  default_prompt: "Use $publish-axhub-requirements-to-tapd to publish an Axhub prototype and its PRD as verified TAPD requirements."

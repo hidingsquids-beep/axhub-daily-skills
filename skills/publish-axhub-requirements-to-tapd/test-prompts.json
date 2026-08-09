@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "prompt": "把 product-card-commission-ops 原型和最新总部运营台 PRD 发布为 TAPD 父需求，并附云端分享地址。",
+    "expected": "查重并继承模板字段，生成父需求，使用 /prototypes/ 和 /docs/ 链接并回查验证。"
+  },
+  {
+    "id": 2,
+    "prompt": "merchant-workbench-dashboard 的 PRD 在五维交叉分析矩阵看板目录中，请生成 TAPD 发布清单。",
+    "expected": "支持原型与 PRD 不同目录的显式关联，限定资源搜索，生成并验证分享链接。"
+  },
+  {
+    "id": 3,
+    "prompt": "把已存在的运营模块需求按六个页面拆成子需求，字段沿用父需求并补齐交付物链接。",
+    "expected": "区分页面子需求与自动角色任务，标题后缀位于同一方括号内，只创建或更新缺失项。"
+  },
+  {
+    "id": 4,
+    "prompt": "本地 Axhub 管理端和原型地址都能返回 200。请把 merchant-workbench-dashboard 与 src/resources/商管工作台首页基础看板PRD.md 发布到 TAPD，并提供项目组可访问的云端交付链接。",
+    "expected": "从部署配置发现公开 Runtime 与 Admin Origin，拒绝 localhost/127.0.0.1 作为交付链接；原型使用 51720，PRD 使用 53817，并在写入前验证页面类型和内容。"
+  }
+]
