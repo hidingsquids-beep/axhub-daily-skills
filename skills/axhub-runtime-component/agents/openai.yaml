@@ -1,0 +1,4 @@
+interface:
+  display_name: "Axhub Runtime Component"
+  short_description: "Create Axhub Runtime React prototypes"
+  default_prompt: "Use $axhub-runtime-component to create an Axhub Runtime React component after clarifying my prototype requirement."

@@ -92,7 +92,7 @@ Resolve origins in this order:
 
 Treat `.axhub/make/.dev-server-info.json`, browser `window.location.origin`, `localhost`, and `127.0.0.1` as local preview evidence only. Do not publish them to TAPD. `RUNTIME_PORT` serves `/prototypes/...`; `MAKE_PUBLIC_PORT` serves `/docs/...`; `MAKE_ADMIN_PORT` is an internal upstream and is not a share port.
 
-For this project's checked-in cloud profile, `.env.cloud.example` resolves `PUBLIC_RUNTIME_ORIGIN=http://121.40.110.77:51720` and `MAKE_PUBLIC_PORT=53817`, so the public Admin origin is `http://121.40.110.77:53817`. Re-read the configuration each run rather than assuming these values for another project.
+For example, a checked-in cloud profile might resolve `PUBLIC_RUNTIME_ORIGIN=https://runtime.example.com` and `PUBLIC_ADMIN_ORIGIN=https://admin.example.com`. Re-read the current project's configuration every run rather than assuming example values apply elsewhere.
 
 Run:
 

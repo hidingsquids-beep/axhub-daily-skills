@@ -1,0 +1,4 @@
+interface:
+  display_name: "操作手册制作"
+  short_description: "从真实后台、原型、截图和业务资料生成培训级操作手册，覆盖二级页面与阻断输入恢复"
+  default_prompt: "Use $operation-manual-workflow to generate a training-ready operation manual from this Axure prototype, live admin URL, screenshots, or page material. In Axhub projects, read src/resources/templates/functional-module-operation-manual.md as the primary manual template when it exists. Explore secondary pages/drawers/modals to safe boundaries, ask for blocking business inputs when needed, and stop before high-risk persistence unless authorized."

@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "figwright": {
+      "command": "cmd.exe",
+      "args": ["/d", "/s", "/c", "npx.cmd", "-y", "@figwright/mcp@0.3.0"],
+      "connectionTimeout": 30000,
+      "requestTimeout": 180000
+    }
+  }
+}

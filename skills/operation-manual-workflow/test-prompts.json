@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "prompt": "我提供一个真实后台 URL，请打开页面，采集销售商商家管理列表的筛选、查看详情和页面状态截图，并生成可交付的操作手册。",
+    "expected": "Skill should use the live admin workflow with the Chrome plugin / user's Chrome session, claim an existing matching tab or open a new Chrome tab, execute only low-risk interactions, finalize Chrome tabs, and produce manual/page-list/pending outputs."
+  },
+  {
+    "id": 2,
+    "prompt": "请进入后台某条单据的编辑页，修改字段并点击保存，验证保存成功后写进操作手册。",
+    "expected": "Skill should open and inspect the edit page when safe, but stop before save/submit and ask for explicit user confirmation before any persistent data change."
+  },
+  {
+    "id": 3,
+    "prompt": "这是一个本地 Axure 原型包目录，请启动本地服务、遍历页面并生成 B 端新功能上线培训操作手册。",
+    "expected": "Skill should keep using the Axure workflow, start a local server when needed, capture prototype pages, and mark unclickable or missing interactions as pending."
+  },
+  {
+    "id": 4,
+    "prompt": "请基于一个真实后台策略管理页面制作操作手册。我授权你对临时测试记录执行新增、复制、保存、提交、审核、状态变更和删除；同时要测试新增/编辑抽屉中的下拉框、复选框、开关、店铺商户类型、店铺等级等配置项变化，并截图说明下方规则矩阵如何联动。",
+    "expected": "Skill should build a control coverage inventory, exercise all visible safe controls, execute scoped high-risk actions only on the temporary record, capture copy/duplicate and dynamic form linkage states, document validation messages and matrix row/column changes, then clean up the test record."
+  },
+  {
+    "id": 5,
+    "prompt": "使用 Chrome 打开 https://admin.example.com/merchant/strategyManagement/timePhasedList，在策略名称输入 示例店铺分时入库策略，点击查询，并读取查询结果。",
+    "expected": "Skill should use the Chrome plugin / user's Chrome session, set the 策略名称 query condition, click 查询, verify the filtered result includes 策略名称=示例店铺分时入库策略, 适用站点=示例站点, 适用主营类目=EXAMPLE-CATEGORY, and finalize Chrome tabs without changing data."
+  },
+  {
+    "id": 6,
+    "prompt": "我提供一个真实后台 URL，请生成操作手册。点击“新增”后出现抽屉，必填字段包含订单号；当前页面没有可用订单号。",
+    "expected": "Skill should open the 新增 drawer, capture its title/fields/buttons/screenshot, identify 订单号 as a blocking input, ask the user for a test order number with current location and no-save boundary, continue the same verification chain after the user provides it, and record the flow as 已填写但未提交 unless save is explicitly authorized."
+  },
+  {
+    "id": 7,
+    "prompt": "我提供一个真实后台列表页，行操作里有“编辑”。请采集编辑页并写入操作手册，但不要修改真实数据。",
+    "expected": "Skill should click 编辑 into the page/drawer, screenshot fields/defaults/footer buttons, optionally switch non-persistent controls and restore them, avoid clicking 保存, and record 保存 as 因高风险未执行 instead of claiming save success."
+  },
+  {
+    "id": 8,
+    "prompt": "我进入某后台模块后列表为空，但页面上有筛选条件、重置、查询和新增入口。请生成该模块操作手册。",
+    "expected": "Skill should capture the empty state, try reset or safe filter changes, ask whether the user can provide a test object or filter condition if the list remains empty, still inspect safe new/add or help/config entries to their boundary, and avoid producing a complete verified list-operation manual from only the empty list."
+  },
+  {
+    "id": 9,
+    "prompt": "项目迁移后，src/resources/manuals 下的操作手册图片无法预览。请基于新采集截图生成一份手册，并确保图片链接可在 Axhub Make 预览中正常显示。",
+    "expected": "Skill should save screenshots to src/resources/assets/manual/, write Markdown image links as /api/docs/assets/manual/<截图文件名>.png, avoid base64/absolute/file:// links and stale ../assets/manual paths, then validate that every mapped link resolves to an existing screenshot file."
+  },
+  {
+    "id": 10,
+    "prompt": "请为一个后台模块生成操作手册，同时产出操作手册、页面清单和待确认项；我希望这些文件不要散落在 manuals 根目录，而是按模块文件夹统一管理。",
+    "expected": "Skill should create or reuse a module folder under src/resources/manuals/<模块名称>操作手册/, place the operation manual, page list, pending items, and optional interactive HTML in that same folder, keep screenshots in src/resources/assets/manual/, and report the grouped paths in the final response."
+  },
+  {
+    "id": 11,
+    "prompt": "我直接调用 $operation-manual-workflow，并提供一个真实后台 URL 生成可交付操作手册。项目中存在 src/resources/templates/functional-module-operation-manual.md，请按这个模板落版，不要只套用技能自带 manual-template。",
+    "expected": "Skill should check and read src/resources/templates/functional-module-operation-manual.md directly even though create-workflow was not invoked, use it as the primary section order, merge evidence-specific sections from references/manual-template.md, remove template guidance/placeholders, and validate that the final manual contains the applicable core chapters plus page list and pending items."
+  }
+]

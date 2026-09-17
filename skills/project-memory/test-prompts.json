@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "prompt": "最近我改了几个原型页面和组件，请帮我整理项目记忆，更新 project-overview、page-map，并追加 memory-log。",
+    "expected": "Skill should read project rules, scan git/file changes, classify changes, produce a confirmation checklist with target files, then update only confirmed docs and append memory-log."
+  },
+  {
+    "id": 2,
+    "prompt": "这次页面新增了一套筛选区和表格操作列样式，请把可复用设计模式沉淀到项目里，但不要直接改主题规范。",
+    "expected": "Skill should identify design-pattern impact, read default theme context, record confirmed patterns in project docs or todo, avoid changing theme implementation, and preserve pending items."
+  },
+  {
+    "id": 3,
+    "prompt": "同步一下数据表和权限说明，最近字段和状态流转有变化，但仓库里还有很多无关改动。",
+    "expected": "Skill should narrow scope to database/permission/state lifecycle, avoid unrelated changes, validate JSON, update relevant docs, and summarize unresolved confirmations."
+  }
+]

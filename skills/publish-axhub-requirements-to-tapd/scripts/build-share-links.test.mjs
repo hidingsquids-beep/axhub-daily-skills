@@ -5,19 +5,19 @@ import { buildShareLinks } from './build-share-links.mjs';
 
 test('builds Axhub prototype and document preview share URLs', () => {
   const links = buildShareLinks({
-    runtimeOrigin: 'http://121.40.110.77:51720/',
-    adminOrigin: 'http://121.40.110.77:53817/',
-    projectId: 'shangguan-shop-domain-kongjian',
-    prototypeId: 'merchant-workbench-dashboard',
-    prdPath: '五维交叉分析矩阵看板/五维交叉矩阵佣金策略监控看板-PRD.md',
+    runtimeOrigin: 'https://runtime.example.com/',
+    adminOrigin: 'https://admin.example.com/',
+    projectId: 'example-project',
+    prototypeId: 'example-dashboard',
+    prdPath: '示例模块/示例需求-PRD.md',
   });
 
   assert.equal(
     links.prototypeUrl,
-    'http://121.40.110.77:51720/prototypes/merchant-workbench-dashboard',
+    'https://runtime.example.com/prototypes/example-dashboard',
   );
   assert.equal(
     links.prdUrl,
-    'http://121.40.110.77:53817/docs/%E4%BA%94%E7%BB%B4%E4%BA%A4%E5%8F%89%E5%88%86%E6%9E%90%E7%9F%A9%E9%98%B5%E7%9C%8B%E6%9D%BF/%E4%BA%94%E7%BB%B4%E4%BA%A4%E5%8F%89%E7%9F%A9%E9%98%B5%E4%BD%A3%E9%87%91%E7%AD%96%E7%95%A5%E7%9B%91%E6%8E%A7%E7%9C%8B%E6%9D%BF-PRD?projectId=shangguan-shop-domain-kongjian',
+    'https://admin.example.com/docs/%E7%A4%BA%E4%BE%8B%E6%A8%A1%E5%9D%97/%E7%A4%BA%E4%BE%8B%E9%9C%80%E6%B1%82-PRD?projectId=example-project',
   );
 });

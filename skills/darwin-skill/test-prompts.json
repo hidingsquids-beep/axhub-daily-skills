@@ -1,0 +1,31 @@
+[
+  {
+    "id": "score_only_no_edit",
+    "prompt": "使用 $darwin-skill 帮我给这个 Skill 打分，但不要修改文件。",
+    "expected": [
+      "只执行测试 prompt 设计和基线评估",
+      "按 8 维 rubric 输出分数、证据和短板",
+      "不进入优化循环、不改动 SKILL.md 或 references"
+    ]
+  },
+  {
+    "id": "optimize_runtime_neutrality",
+    "prompt": "使用 $darwin-skill 优化这个 Skill，重点检查是否存在 Claude/Codex/Cursor 等单一 runtime 绑定问题。",
+    "expected": [
+      "先扫描 SKILL.md 和 README 的 runtime 红灯信号",
+      "将硬编码安装路径、工具路径和表述改为 runtime-neutral 写法",
+      "保留明确标注的示例和例外说明",
+      "复评时给出 before/after 分数和 eval_mode"
+    ]
+  },
+  {
+    "id": "optimize_template_hit",
+    "prompt": "使用 $darwin-skill 优化 operation-manual-workflow，确保它生成操作手册时命中项目模板 functional-module-operation-manual.md。",
+    "expected": [
+      "识别用户目标是优化另一个 Skill 的模板命中能力",
+      "先做基线 dry-run，确认当前模板读取链路是否缺失",
+      "只修改目标 Skill 的必要说明、reference 或测试提示",
+      "验证输出会读取指定模板，并说明 evidence、限制和待确认项"
+    ]
+  }
+]
